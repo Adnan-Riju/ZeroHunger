@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ZeroHungerAssignment.EF.Request>
+
+@{
+    ViewBag.Title = "History";
+}
+
+<h2>History</h2>
+<a class="btn btn-primary" href="/Restaurant/index">Show List</a>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IteamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignEmployee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RestaurantId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IteamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RestaurantId)
+        </td>
+       
+    </tr>
+}
+
+</table>
